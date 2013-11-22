@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    div.page-header
+        h1 Mobile Authentication Service - Administration
+    div.panel.panel-primary
+        div.panel-heading 
+            h2 Generate PINs
+        div.panel-body
+            form(method="POST", action="/generate")
+                div.form-group
+                    input(placeholder="Number of PINs", type="number", name="Count").form-control.input-large#Count
+                div.form-group
+                    input(placeholder="Company Name", type="text", name="Company").form-control.input-large#Company
+                div.form-group
+                    button.btn.btn-primary Generate

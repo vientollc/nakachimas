@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div.page-header
+        h1 Login to Mobile Authentication Service
+    div#resp
+    form
+        div.form-group
+            input(placeholder="username").form-control.input-large#username
+        div.form-group
+            input(placeholder="password", type="password").form-control.input-large#password
+        div.form-group
+            button(type="button").btn.btn-success#loginBtn Login
+            a(data-toggle="modal", href="#resetModal").btn.btn-warning Password Recovery
+    div(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true").modal.fade#resetModal
+        div.modal-dialog
+            div.modal-content
+                div.modal-header
+                    button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+                    h3.modal-title Password Recovery
+                div.modal-body
+                    div#resetResp
+                    div.form-group
+                        input(placeholder="email address").form-control.input-large#email
+                div.modal-footer
+                    button(type="button", data-dismiss="modal").btn.btn-default Close
+                    button(type="button").btn.btn-primary#resetBtn Password Reset
